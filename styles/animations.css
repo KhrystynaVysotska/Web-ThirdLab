@@ -1,0 +1,42 @@
+.header__topnavbar__item:hover {
+  background-color: var(--main-body-color);
+}
+.header__topnavbar__item {
+  transition: all 0.4s ease;
+}
+.header__button-search,
+.header__button-clear,
+.content__card__button-edit,
+.content__card__button-remove {
+  transition: all 200ms ease-in;
+}
+.header__button-clear:hover,
+.header__button-search:hover,
+.content__management__count__button-primary:hover {
+  background: #edd5c8;
+}
+.content__management__sort-checker:checked + .content__management__sort-field {
+  background-color: var(--main-body-color);
+}
+.content__management__sort-checker:focus .content__management__sort-field {
+  box-shadow: 0 0 1px #2196f3;
+}
+.content__management__sort-checker:checked
+  + .content__management__sort-field:before {
+  transform: translateX(28px);
+}
+.content__card {
+  transition: all 200ms ease-in;
+}
+.content__card:hover {
+  transform: scale(1.05);
+}
+.content__card__button-edit:hover {
+  background: var(--main-body-color);
+  color: #000;
+}
+.content__card__button-remove:hover {
+  border: 1px solid var(--main-body-color);
+  background: transparent;
+  color: #997460;
+}
