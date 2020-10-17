@@ -1,8 +1,9 @@
+import { deleteCard } from "./delete.js";
+
 const itemsContainer = document.querySelector(".content__cards");
 
-const getItemId = (id) => `item-${id}`;
 const itemTemplate = ({
-  id,
+  sweaterId,
   brandName,
   countryOfManufacture,
   season,
@@ -10,7 +11,7 @@ const itemTemplate = ({
   size,
   priceInUah,
 }) => `
-<div id="${getItemId(id)}" class="content__card">
+<div class="content__card">
 <img
   src="./images/sweater.jpg"
   alt="sweater"
@@ -58,20 +59,21 @@ const itemTemplate = ({
 </div>
 <div class="content__card__button">
   <button
+    id="btn-edit-${sweaterId}"
     type="button"
     name="button"
     class="content__card__button-edit"
   >Edit</button>
   <button
+    id="btn-remove-${sweaterId}"
     type="button"
     name="button"
     class="content__card__button-remove"
   >Remove</button>
 </div>
 </div>`;
-
-export const addItemToPage = ({
-  id,
+const addItemToPage = ({
+  sweaterId,
   brandName,
   countryOfManufacture,
   season,
@@ -82,7 +84,7 @@ export const addItemToPage = ({
   itemsContainer.insertAdjacentHTML(
     "beforeend",
     itemTemplate({
-      id,
+      sweaterId,
       brandName,
       countryOfManufacture,
       season,
@@ -91,8 +93,11 @@ export const addItemToPage = ({
       priceInUah,
     })
   );
+  const remove_button = document.getElementById("btn-remove-" + sweaterId);
+  remove_button.addEventListener("click", () => {
+    deleteCard(sweaterId);
+  });
 };
-
 export const renderItemsList = (items) => {
   itemsContainer.innerHTML = "";
   for (const item of items) {

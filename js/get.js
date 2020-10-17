@@ -1,5 +1,4 @@
-import { renderItemsList } from "./utilities.js";
-
+import {renderItemsList} from './utilities.js'
 const url = "http://localhost:8080/sweaters";
 
 export const getCards = async () => {
@@ -10,7 +9,7 @@ export const getCards = async () => {
     console.log(error);
   }
 };
-async function renderCards() {
+export async function renderCards() {
   let cards = await getCards();
   renderItemsList(cards);
 }

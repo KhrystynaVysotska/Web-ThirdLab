@@ -1,5 +1,5 @@
-import { renderItemsList } from "./utilities.js";
-import { getCards } from "./requests.js";
+import {renderItemsList} from './utilities.js';
+import {getCards} from './get.js'
 
 let checkbox = document.querySelector("input[name=checkbox]");
 const count_button = document.querySelector(
@@ -19,7 +19,6 @@ clear_input.addEventListener("click", () => {
   cards_filtered_array = [];
   renderItemsList(cards_original_array);
 });
-
 search_for_input.addEventListener("click", () => {
   cards_filtered_array = cards_original_array.filter((el) =>
     el.brandName.includes(input.value)
@@ -30,7 +29,6 @@ search_for_input.addEventListener("click", () => {
 function comparator(first_element, second_element) {
   return first_element.priceInUah - second_element.priceInUah;
 }
-
 checkbox.addEventListener("change", async function () {
   if (input.value != "") {
     if (this.checked) {
@@ -64,7 +62,6 @@ count_button.addEventListener("click", () => {
   }
   total_sum.innerHTML = sum;
 });
-
 const count_total_price = async () => {
   let cards_container = await getCards();
   cards_original_array = Array.from(cards_container);

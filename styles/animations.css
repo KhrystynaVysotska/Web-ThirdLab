@@ -7,12 +7,14 @@
 .header__button-search,
 .header__button-clear,
 .content__card__button-edit,
-.content__card__button-remove {
+.content__card__button-remove,
+.create__form__fields input[type="submit"] {
   transition: all 200ms ease-in;
 }
 .header__button-clear:hover,
 .header__button-search:hover,
-.content__management__count__button-primary:hover {
+.content__management__count__button-primary:hover,
+.create__form__fields input[type="submit"]:hover {
   background: #edd5c8;
 }
 .content__management__sort-checker:checked + .content__management__sort-field {
@@ -39,4 +41,24 @@
   border: 1px solid var(--main-body-color);
   background: transparent;
   color: #997460;
+}
+.create__form__fields-label {
+  transform: translate(-200px, 15px);
+}
+.create__form__fields input:focus {
+  border-color: #c7997f;
+}
+.create__form__fields input:focus + label {
+  color: #c7997f;
+  font-weight: 400;
+  animation: fadeIn 0.3s linear 1;
+  transform: translate(-195px, -10px);
+}
+@keyframes fadeIn {
+  0% {
+    transform: translate(-200px, 15px);
+  }
+  100% {
+    transform: translate(-195px, -10px);
+  }
 }

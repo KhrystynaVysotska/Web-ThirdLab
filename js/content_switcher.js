@@ -1,7 +1,7 @@
 const home_link = document.querySelector(".home");
 const form_link = document.querySelector(".form");
 const page = document.querySelector(".content");
-const form = document.querySelector(".form");
+const form = document.querySelector(".create");
 form_link.addEventListener("click", () => {
   page.innerHTML = form.innerHTML;
 });
