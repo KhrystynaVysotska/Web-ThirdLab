@@ -1,5 +1,5 @@
-import {renderItemsList} from './utilities.js';
-import {getCards} from './get.js'
+import { renderItemsList } from "./utilities.js";
+import { getCards } from "./get.js";
 
 let checkbox = document.querySelector("input[name=checkbox]");
 const count_button = document.querySelector(
@@ -21,13 +21,13 @@ clear_input.addEventListener("click", () => {
 });
 search_for_input.addEventListener("click", () => {
   cards_filtered_array = cards_original_array.filter((el) =>
-    el.brandName.includes(input.value)
+    el.brandName.includes(input.value.trim())
   );
   renderItemsList(cards_filtered_array);
 });
 
 function comparator(first_element, second_element) {
-  return first_element.priceInUah - second_element.priceInUah;
+  return second_element.priceInUah - first_element.priceInUah;
 }
 checkbox.addEventListener("change", async function () {
   if (input.value != "") {
@@ -49,27 +49,23 @@ checkbox.addEventListener("change", async function () {
 });
 
 count_button.addEventListener("click", () => {
-  total_sum.innerHTML = "";
-  let sum = 0;
-  if (input.value != "") {
-    cards_filtered_array.map((el) => {
-      sum += el.priceInUah;
-    });
-  } else {
-    cards_original_array.map((el) => {
-      sum += el.priceInUah;
-    });
-  }
-  total_sum.innerHTML = sum;
+  count_total_price();
 });
 const count_total_price = async () => {
   let cards_container = await getCards();
   cards_original_array = Array.from(cards_container);
   cards_sorted_array = cards_original_array.slice();
+  total_sum.innerHTML = "";
   let sum = 0;
-  cards_original_array.map((el) => {
-    sum += el.priceInUah;
-  });
+  if (input.value != "") {
+    cards_filtered_array.forEach((el) => {
+      sum += el.priceInUah;
+    });
+  } else {
+    cards_original_array.forEach((el) => {
+      sum += el.priceInUah;
+    });
+  }
   total_sum.innerHTML = sum;
 };
 
