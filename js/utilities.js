@@ -72,7 +72,7 @@ const itemTemplate = ({
   >Remove</button>
 </div>
 </div>`;
-const addItemToPage = ({
+export const addItemToPage = ({
   sweaterId,
   brandName,
   countryOfManufacture,
@@ -82,7 +82,7 @@ const addItemToPage = ({
   priceInUah,
 }) => {
   itemsContainer.insertAdjacentHTML(
-    "beforeend",
+    "afterbegin",
     itemTemplate({
       sweaterId,
       brandName,
@@ -94,8 +94,12 @@ const addItemToPage = ({
     })
   );
   const remove_button = document.getElementById("btn-remove-" + sweaterId);
+  const edit_button = document.getElementById("btn-edit-" + sweaterId);
   remove_button.addEventListener("click", () => {
     deleteCard(sweaterId);
+  });
+  edit_button.addEventListener("click", () => {
+    window.location.href = "./edit.html?id=" + sweaterId;
   });
 };
 export const renderItemsList = (items) => {
