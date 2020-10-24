@@ -34,23 +34,26 @@ export function validatedData(array) {
   let countEmptyFields = 0;
   array.forEach((input) => {
     if (input.value === "") {
+      input.previousElementSibling.style.display = "block";
       input.style.borderColor = "red";
-      input.style.borderWidth = "2px";
       countEmptyFields++;
     }
   });
   if (countEmptyFields > 0) {
-    removeErrorBorder();
+    removeError();
     return false;
   }
   return true;
 }
 
-function removeErrorBorder() {
+function removeError() {
   fields.forEach((input) => {
-    input.addEventListener("keydown", () => {
+    input.addEventListener("focus", () => {
+      input.previousElementSibling.style.display = "none";
       input.style.borderColor = "#c7997f";
-      input.style.borderWidth = "1px";
+    });
+    input.addEventListener("blur", () => {
+      input.style.borderColor = "#ccc";
     });
   });
 }

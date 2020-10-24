@@ -38,7 +38,12 @@
   color: #808080;
   font-weight: 300;
 }
-
+.edit__form__fields-error {
+  display: none;
+  margin: 0 10px 5px 0;
+  color: red;
+  font-weight: normal;
+}
 .edit__form__fields input[type="text"],
 [type="number"] {
   box-sizing: border-box;
