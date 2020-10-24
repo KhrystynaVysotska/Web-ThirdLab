@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>My sweet sweaters</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="edit_page">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__left">
+          <div class="header__title">
+            <h1>My Shop</h1>
+          </div>
+          <div class="header__topbar" onclick="myFunction(event)">
+            <li class="header__topnavbar__item">
+              <a href="index.html" class="home">
+                <span>My Sweaters</span>
+              </a>
+            </li>
+            <li class="header__topnavbar__item">
+              <a href="create.html" class="form">
+                <span>New Sweater</span>
+              </a>
+            </li>
+          </div>
+        </div>
+        <div class="header__right">
+          <input
+            type="search"
+            class="header__input"
+            placeholder="Enter brand..."
+          />
+          <div class="header__button">
+            <button type="button" class="header__button-search">
+              Search
+            </button>
+            <button type="button" class="header__button-clear">
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="edit">
+      <div class="edit__form">
+        <h1 class="edit__form__title">Edit Sweater</h1>
+        <form id="edit" autocomplete="off" class="edit__form__fields">
+          <div class="edit__form__fields__section">
+            <div class="edit__form__fields__section-first">
+              <div>
+                <input
+                  type="text"
+                  id="brand"
+                  placeholder="Brand"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Brand'"
+                  class="edit__form__fields__input"
+                />
+                <label class="edit__form__fields-label">Brand</label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="country"
+                  placeholder="Country"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Country'"
+                  class="edit__form__fields__input"
+                />
+                <label class="edit__form__fields-label">Country</label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="season"
+                  placeholder="Season"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Season'"
+                  class="edit__form__fields__input"
+                />
+                <label class="edit__form__fields-label">Season</label>
+              </div>
+            </div>
+            <div class="edit__form__fields__section-second">
+              <div>
+                <input
+                  type="text"
+                  id="material"
+                  placeholder="Material"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Material'"
+                  class="edit__form__fields__input"
+                />
+                <label class="edit__form__fields-label">Material</label>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="size"
+                  placeholder="Size"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Size'"
+                  class="edit__form__fields__input"
+                />
+                <label class="edit__form__fields-label">Size</label>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="price"
+                  placeholder="Price"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Price'"
+                  class="edit__form__fields__input"
+                />
+                <label class="edit__form__fields-label">Price</label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <input
+              class="edit__form__fields-submit"
+              type="submit"
+              name="submit"
+              value="submit"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+    <script type="module" src="./js/update.js"></script>
+  </body>
+</html>

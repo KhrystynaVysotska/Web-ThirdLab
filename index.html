@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body id="first">
     <header class="header">
       <div class="header__container">
         <div class="header__left">
@@ -25,7 +25,7 @@
               <a href="index.html" class="home"><span>My Sweaters</span></a>
             </li>
             <li class="header__topnavbar__item">
-              <a href="#" class="form"><span>New Sweater</span></a>
+              <a href="create.html" class="form"><span>New Sweater</span></a>
             </li>
           </div>
         </div>
@@ -82,88 +82,6 @@
         <section class="content__cards"></section>
       </div>
     </section>
-    <section class="create">
-      <div class="create__form">
-        <h1 class="create__form__title">New Sweater</h1>
-        <form class="create__form__fields">
-          <div class="create__form__fields__section">
-            <div class="create__form__fields__section-first">
-              <div>
-                <input
-                  type="text"
-                  name="brand"
-                  placeholder="Brand"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Brand'"
-                />
-                <label class="create__form__fields-label">Brand</label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="country"
-                  placeholder="Country"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Country'"
-                />
-                <label class="create__form__fields-label">Country</label>
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="season"
-                  placeholder="Season"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Season'"
-                />
-                <label class="create__form__fields-label">Season</label>
-              </div>
-            </div>
-            <div class="create__form__fields__section-second">
-              <div>
-                <input
-                  type="text"
-                  name="material"
-                  placeholder="Material"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Material'"
-                />
-                <label class="create__form__fields-label">Material</label>
-              </div>
-              <div>
-                <input
-                  type="number"
-                  name="size"
-                  placeholder="Size"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Size'"
-                />
-                <label class="create__form__fields-label">Size</label>
-              </div>
-              <div>
-                <input
-                  type="number"
-                  name="price"
-                  placeholder="Price"
-                  onfocus="this.placeholder = ''"
-                  onblur="this.placeholder = 'Price'"
-                />
-                <label class="create__form__fields-label">Price</label>
-              </div>
-            </div>
-          </div>
-          <div>
-            <input
-              class="create__form__fields-submit"
-              type="submit"
-              name="submit"
-              value="submit"
-            />
-          </div>
-        </form>
-      </div>
-    </section>
-    <script src="./js/content_switcher.js"></script>
     <script type="module" src="./js/utilities.js"></script>
     <script type="module" src="./js/get.js"></script>
     <script type="module" src="./js/operations.js"></script>
