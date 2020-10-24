@@ -5,6 +5,6 @@ export async function deleteCard(id) {
   await fetch(url + "/" + id, {
     method: "DELETE",
   })
-    .then((res) => console.log(res.status))
+    .then(renderCards)
     .catch((error) => console.log(error));
 }

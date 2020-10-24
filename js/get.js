@@ -1,5 +1,6 @@
-import {renderItemsList} from './utilities.js'
+import { renderItemsList } from "./utilities.js";
 const url = "http://localhost:8080/sweaters";
+const first_page = document.getElementById("first");
 
 export const getCards = async () => {
   try {
@@ -14,4 +15,6 @@ export async function renderCards() {
   renderItemsList(cards);
 }
 
-renderCards();
+if (first_page != null) {
+  first_page.addEventListener("load", renderCards());
+}
